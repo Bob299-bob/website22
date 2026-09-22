@@ -1,14 +1,21 @@
-
 import Link from "next/link";
 
-export default function ProductCard({
-  product,
-}: {
-  product: any;
-}) {
+type Product = {
+  id: number;
+  name: string;
+  slug: string;
+  category: string;
+  description: string;
+  features: string[];
+};
+
+type ProductCardProps = {
+  product: Product;
+};
+
+export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group rounded-2xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl sm:p-7">
-
       {/* Icon */}
       <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-xl font-bold text-indigo-600 sm:mb-6 sm:h-14 sm:w-14 sm:text-2xl">
         {product.name.charAt(0)}
@@ -39,4 +46,3 @@ export default function ProductCard({
     </div>
   );
 }
-
