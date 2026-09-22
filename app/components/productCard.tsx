@@ -1,6 +1,19 @@
 import Link from "next/link";
 
-export default function ProductCard({ product }) {
+type Product = {
+  id: number;
+  name: string;
+  slug: string;
+  category: string;
+  description: string;
+  features: string[];
+};
+
+type ProductCardProps = {
+  product: Product;
+};
+
+export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group rounded-2xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl sm:p-7">
       {/* Icon */}
